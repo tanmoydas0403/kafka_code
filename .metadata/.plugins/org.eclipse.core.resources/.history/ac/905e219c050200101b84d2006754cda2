@@ -1,0 +1,5 @@
+package com.kafkalectures.entity;
+
+public class Order {
+
+}

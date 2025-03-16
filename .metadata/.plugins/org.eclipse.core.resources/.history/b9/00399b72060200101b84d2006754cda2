@@ -1,0 +1,5 @@
+package com.kafkalectures.config;
+
+public class KafkaProduceConfiguration {
+
+}

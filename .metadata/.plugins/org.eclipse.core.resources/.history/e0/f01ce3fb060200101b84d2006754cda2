@@ -1,0 +1,21 @@
+package com.kafkalectures.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.core.KafkaTemplate;
+
+import com.kafkalectures.constants.AppConstants;
+import com.kafkalectures.entity.Order;
+
+public class OrderService {
+	@Autowired
+	private KafkaTemplate<String, Order> kafkaTemplate;
+
+	public String addMsg(Order order) {
+
+		// sends msg to kafka topic
+		kafkaTemplate.send(AppConstants.TOPIC, order);
+
+		return "Msg Published To Kafka Topic";
+	}
+
+}
